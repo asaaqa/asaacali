@@ -6,7 +6,7 @@
         "Telethon",
         "Pyrogram"
     ],
-    "repository": "https://github.com/ionmusic/Kazu-Ubot",
+    "repository": "https://github.com/asaaqa/asaacali",
     "success_url": "https://t.me/disinikazu",
     "stack": "container",
     "env": {
