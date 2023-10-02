@@ -26,7 +26,7 @@ _main_help_menu = [
 ]
 
 
-@kazu_cmd(pattern="help( (.*)|$)")
+@kazu_cmd(pattern="الاوامر( (.*)|$)")
 async def _help(kazu):
     plug = kazu.pattern_match.group(1).strip()
     chat = await kazu.get_chat()
