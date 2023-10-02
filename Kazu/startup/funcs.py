@@ -302,7 +302,7 @@ async def autopilot():
                 LOGS.exception(er)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = await download_file(
-            "https://graph.org//file/d854abd533a783c6642b1.jpg",
+            "https://graph.org/file/a0be504365cce504260c1.jpg",
             "resources/extras/logo.jpg",
         )
         ll = await kazu_bot.upload_file(photo)
@@ -334,7 +334,7 @@ async def customize():
             sir = f"@{kazu_bot.me.username}"
         file = random.choice(
             [
-                "https://graph.org//file/d854abd533a783c6642b1.jpg",
+                "https://graph.org/file/a0be504365cce504260c1.jpg",
                 "resources/extras/logo.jpg",
             ]
         )
@@ -362,7 +362,7 @@ async def customize():
         await kazu_bot.send_message("botfather", UL)
         await asyncio.sleep(1)
         await kazu_bot.send_message(
-            "botfather", f"✨ Hello ✨!! I'm Assistant Bot of {sir}"
+            "botfather", f"✨ مرحبا ✨!! I'm Assistant Bot of {sir}"
         )
         await asyncio.sleep(2)
         await kazu_bot.send_message("botfather", "/setdescription")
