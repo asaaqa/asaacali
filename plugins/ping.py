@@ -51,7 +51,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@kazu_cmd(pattern=r"^pink$", incoming=True, from_users=DEVLIST)
+@kazu_cmd(pattern=r"^بنج$", incoming=True, from_users=DEVLIST)
 async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
