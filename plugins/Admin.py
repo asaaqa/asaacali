@@ -71,7 +71,7 @@ from . import (
 
 
 @kazu_cmd(
-    pattern="رفع_مشرف( (.*)|$)",
+    pattern="رفع مشرف( (.*)|$)",
     admins_only=True,
     manager=True,
     require="add_admins",
@@ -114,7 +114,7 @@ async def prmte(ayra):
 
 
 @kazu_cmd(
-    pattern="رفع_مشير( (.*)|$)",
+    pattern="رفع مشير( (.*)|$)",
     admins_only=True,
     manager=True,
     require="add_admins",
@@ -174,7 +174,7 @@ async def bban(ayra):
 
 
 @kazu_cmd(
-    pattern="الغاء_حظر( (.*)|$)",
+    pattern="الغاء حظر( (.*)|$)",
     admins_only=True,
     manager=True,
     require="ban_users",
