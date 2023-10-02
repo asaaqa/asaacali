@@ -14,7 +14,7 @@ COPY installer.sh .
 RUN bash installer.sh
 
 # changing workdir
-WORKDIR "/root/ionmusic"
+WORKDIR "/root/asaaqa"
 
 # start the bot.
 CMD ["bash", "startup"]
