@@ -1,30 +1,28 @@
-# Ayra - UserBot
+Ayra - UserBot
 # Copyright (C) 2021-2022 senpai80
-#
+#  تعريب الامبراطور اليسع 
 # This file is a part of < https://github.com/senpai80/Ayra/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-◈ Perintah Tersedia
+                 [𝑺𝑶𝑹𝑪𝑬 𝑨𝑴𝑩𝑹𝑶 𖥅])(https://t.me/Mlze1bot) 
+❂ :**أوامر المكالمات كالتالي  :**
 
-• `{i} startvc`
+• `{i} افتح`
     Mulai Panggilan Grup dalam grup.
 
-• `{i} stopvc`
-    Hentikan Panggilan Grup dalam grup.
+• `{i} توقف`
+-    إيقاف المكالمات الجماعية داخل المجموعة.
 
-• `{i} vctitle <title>`
-    Ubah judul Panggilan grup.
+• `{i} عنوان <title>`
+    -   لتغيير عنوان المكالمة الصوتيه .
 
-• `{i} vcinvite`
-    Undang semua anggota grup di Group Call.
-    (Anda harus bergabung)
+• `{i} دعوة الجميع`
+    -  لدعوة جميع الاعضاء بالجروب للمكالمة الصوتيه.
+    (انتبه هاذا امر دعوة لجميع الاعضاء بدون استثناء امر مزعج)
     
-• `{i} joinvc` <chat id/username grup>
-   Bergabunglah dengan obrolan suara.
-
-• `{i} leavevc` <chat id/username grup>
-   Tinggalkan obrolan suara.
+• `{i} خروج` <ايدي الجروب / او يوزر الجروب>
+   -  مغادرة الدردشه الصوتيه .
 
 """
 
@@ -52,7 +50,7 @@ def user_list(l, n):
 
 
 @kazu_cmd(
-    pattern="stopvc$",
+    pattern="توقف$",
     admins_only=True,
     groups_only=True,
 )
@@ -65,7 +63,7 @@ async def _(e):
 
 
 @kazu_cmd(
-    pattern="vcinvite$",
+    pattern="دعوة الجميع$",
     groups_only=True,
 )
 async def _(e):
@@ -86,7 +84,7 @@ async def _(e):
 
 
 @kazu_cmd(
-    pattern="startvc$",
+    pattern="افتح$",
     admins_only=True,
     groups_only=True,
 )
@@ -99,7 +97,7 @@ async def _(e):
 
 
 @kazu_cmd(
-    pattern="vctitle(?: |$)(.*)",
+    pattern="عنوان(?: |$)(.*)",
     admins_only=True,
     groups_only=True,
 )
@@ -133,7 +131,7 @@ async def join_(event):
         await aySongs.vc_joiner()
 
 
-@vc_asst("(end|leavevc)")
+@vc_asst("(اخرج|خروج)")
 async def leaver(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
