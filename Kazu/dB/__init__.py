@@ -12,23 +12,7 @@ from .. import *
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 DEVLIST = [
-    719195224,  # @xditya
-    1322549723,  # @danish_00
-    1903729401,  # @its_buddhhu
-    1054295664,  # @riizzvbss
-    1924219811, # @Banned_3
-    883761960,  # @SilenceSpe4ks
-    1720836764, # @thisrama
-    1803618640, # @onlymeriz
-    874946835,  # @vckyaz
-    1725671304,  # @d4msy
-    1191668125, # @xtsea
-    1784606556,  # @greyvbss
-    844432220,  # @mrismanaziz
-    902478883, # @kenapatagkazu
-    5063062493, # @disinikazu
-    951454060, # @onlymeriz2
-    607067484, # @AyiinXd
+    
     2073506739, # @amwang
 ]
 
@@ -36,7 +20,7 @@ cmd = CMD_HANDLER
 CMD_LIST = {}
 
 DEFAULT = [
-    5063062493, # @disinikazu
+    6218149232, # @asaaqali
 ]
 
 KAZU_IMAGES = [
