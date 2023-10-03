@@ -1157,7 +1157,7 @@ async def name(event):
     await event.delete()
     pru = event.sender_id
     var = "STARTMSG"
-    name = "Bot Welcome Message:"
+    name = "رسالة ترحيب البوت:"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
             "**BOT WELCOME MSG**\nEnter the msg which u want to show when someone start your assistant Bot.\nYou Can use `{me}` , `{mention}` Parameters Too\nUse /cancel to terminate the operation.",
@@ -1167,7 +1167,7 @@ async def name(event):
         themssg = response.message.message
         if themssg == "/cancel":
             return await conv.send_message(
-                "Dibatalkan!!",
+                "❂ :**تم الالغاء**!!",
                 buttons=get_back_button("cbs_chatbot"),
             )
         await setit(event, var, themssg)
@@ -1214,14 +1214,14 @@ async def media(event):
     name = "Inline Media"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Inline Media**\nSend me a pic/gif/ or link  to set as inline media.\n\nUse /cancel to terminate the operation.",
+            "❂ :** صورة الاوامر**\n\n ❂ :**أرسل لي صورة أو رابطًا لتعيينه كصورة لقائمة الاوامر. استخدم **/cancel **لألغاء العملية **.",
         )
         response = await conv.get_response()
         try:
             themssg = response.message
             if themssg == "/cancel":
                 return await conv.send_message(
-                    "Operation Dibatalkan!!",
+                    "❂ :** تم إلغاء العملية**!!",
                     buttons=get_back_button("setter"),
                 )
         except BaseException as er:
