@@ -13,14 +13,14 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 DEVLIST = [
     
-    2073506739, # @amwang
+    6218149232, # @amwang
 ]
 
 cmd = CMD_HANDLER
 CMD_LIST = {}
 
 DEFAULT = [
-    6218149232, # @asaaqali
+    6218149238, # @asaaqali
 ]
 
 KAZU_IMAGES = [
