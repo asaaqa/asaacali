@@ -76,7 +76,7 @@ async def autoupdate_local_database():
             or "me"
         )
         msg = await asst.send_message(
-            LOG_CHANNEL, "**Do not delete this file.**", file="database.json"
+            LOG_CHANNEL, "**لا تقم بحذف هذا الملف.**", file="database.json"
         )
         asst._cache["TGDB_URL"] = msg.message_link
         udB.set_key("TGDB_URL", msg.message_link)
@@ -85,7 +85,7 @@ async def autoupdate_local_database():
 
 
 def update_envs():
-    """Update Var. attributes to udB"""
+    """تحديث فارات قاعدة بيانات udB"""
     from .. import udB
 
     for envs in list(os.environ):
@@ -133,7 +133,7 @@ async def startup_stuff():
             LOGS.debug(er)
         except BaseException:
             LOGS.critical(
-                "Zona waktu salah"
+                "منطقة زمنية خاطئة"
             )
             os.environ["TZ"] = "UTC"
             time.tzset()
@@ -145,7 +145,7 @@ async def autobot():
     if udB.get_key("BOT_TOKEN"):
         return
     await kazu_bot.start()
-    LOGS.info("MEMBUAT BOT TELEGRAM UNTUK ANDA DI @BotFather, Mohon Tunggu")
+    LOGS.info("إنشاء روبوت Telegram لك على @BotFather، برجاء الانتظار")
     who = kazu_bot.me
     name = f"{who.first_name}' Bot"
     if who.username:
@@ -159,9 +159,9 @@ async def autobot():
     await kazu_bot.send_message(bf, "/newbot")
     await asyncio.sleep(1)
     isdone = (await kazu_bot.get_messages(bf, limit=1))[0].text
-    if isdone.startswith("That I cannot do.") or "20 bots" in isdone:
+    if isdone.startswith("لا أستطيع أن أفعل.") or "20 bots" in isdone:
         LOGS.critical(
-            "Tolong buat Bot dari @BotFather dan tambahkan tokennya di BOT_TOKEN, sebagai env var dan mulai ulang saya."
+            "الرجاء إنشاء روبوت من @BotFather وإضافة الرمز المميز الخاص به في BOT_TOKEN، مثل env var ثم أعد تشغيلي."
         )
         import sys
 
@@ -175,7 +175,7 @@ async def autobot():
         isdone = (await kazu_bot.get_messages(bf, limit=1))[0].text
         if not isdone.startswith("Good."):
             LOGS.critical(
-                "Tolong buat Bot dari @BotFather dan tambahkan tokennya di BOT_TOKEN, sebagai env var dan mulai ulang saya."
+                "الرجاء إنشاء روبوت من @BotFather وإضافة الرمز المميز الخاص به في BOT_TOKEN، مثل env var ثم أعد تشغيلي."
             )
             import sys
 
@@ -195,11 +195,11 @@ async def autobot():
         udB.set_key("BOT_TOKEN", token)
         await enable_inline(kazu_bot, username)
         LOGS.info(
-            f"Selesai. Berhasil membuat @{username} untuk digunakan sebagai bot asisten Anda!"
+            f"انتهى. تم بنجاح إنشاء @{username} لاستخدامه كروبوت مساعد!"
         )
     else:
         LOGS.info(
-            "Harap Hapus Beberapa bot Telegram Anda di @Botfather atau Setel Var BOT_TOKEN dengan token bot"
+            "يرجى حذف بعض روبوتات Telegram الخاصة بك فيBotfather أو تعيين Var BOT_TOKEN باستخدام توكن اي بوت خاص بك"
         )
 
         import sys
@@ -224,25 +224,25 @@ async def autopilot():
         async def _save(exc):
             udB._cache["LOG_CHANNEL"] = kazu_bot.me.id
             await asst.send_message(
-                kazu_bot.me.id, f"Gagal Membuat Saluran Log karena {exc}.."
+                kazu_bot.me.id, f"فشل في إنشاء قناة السجل بسبب {exc}.."
             )
 
         if kazu_bot._bot:
             msg_ = "'LOG_CHANNEL' tidak ditemukan! Tambahkan untuk digunakan 'BOTMODE'"
             LOGS.error(msg_)
             return await _save(msg_)
-        LOGS.info("Membuat Saluran Log untuk Anda!")
+        LOGS.info("قم بانشاء قناة السجل الخاصه بك!")
         try:
             r = await kazu_bot(
                 CreateChannelRequest(
-                    title="Logs Kazu Ubot",
-                    about="Logs Kazu Ubot \n\n Cʀᴇᴀᴛᴇᴅ Bʏ @kazusupportgrp",
+                    title="سجلات أمبرو بلاك يوزر بوت",
+                    about="سجلات أمبرو بلاك يوزر بوت \n\n قناة السورس @ASAAQALIO",
                     megagroup=True,
                 ),
             )
         except ChannelsTooMuchError as er:
             LOGS.critical(
-                "Anda Berada di Terlalu Banyak Saluran & Grup, Tinggalkan beberapa dan Mulai Ulang Bot"
+                "لديك قنوات او جروبات كثيره جدا احذف بعضها واعد تشغيل السورس "
             )
             return await _save(str(er))
         except BaseException as er:
