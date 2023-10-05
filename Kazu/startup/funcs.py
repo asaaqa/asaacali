@@ -62,7 +62,7 @@ async def autoupdate_local_database():
                 int(_channel) if _channel.isdigit() else _channel,
                 message=_id,
                 file="database.json",
-                text="**Do not delete this file.**",
+                text="**لا تقم بحذف هذا الملف.**",
             )
         except MessageNotModifiedError:
             return
@@ -248,7 +248,7 @@ async def autopilot():
         except BaseException as er:
             LOGS.exception(er)
             LOGS.info(
-                "Ada yang Salah, Buat Grup dan atur idnya di config var LOG_CHANNEL."
+                "هناك خطأ ما، قم بإنشاء مجموعة وقم بتعيين الايدي في config var LOG_CHANNEL."
             )
 
             return await _save(str(er))
@@ -263,7 +263,7 @@ async def autopilot():
         try:
             await kazu_bot(InviteToChannelRequest(int(channel), [asst.me.username]))
         except BaseException as er:
-            LOGS.info("Kesalahan saat Menambahkan Asisten ke Saluran Log")
+            LOGS.info("حدث خطأ أثناء إضافة المساعد إلى قناة السجل")
             LOGS.exception(er)
             assistant = False
     except BaseException as er:
@@ -274,7 +274,7 @@ async def autopilot():
             achat = await asst.get_entity(int(channel))
         except BaseException as er:
             achat = None
-            LOGS.info("Terjadi error saat mendapatkan saluran Log dari Asisten")
+            LOGS.info("حدث خطأ أثناء الحصول على قناة السجل من المساعد")
             LOGS.exception(er)
         if achat and not achat.admin_rights:
             rights = ChatAdminRights(
@@ -298,7 +298,7 @@ async def autopilot():
                     "Gagal mempromosikan 'Bot Asisten' di 'Log Channel' karena 'Hak Istimewa Admin'"
                 )
             except BaseException as er:
-                LOGS.info("Terjadi kesalahan saat mempromosikan asisten di Log Channel..")
+                LOGS.info("حدث خطأ أثناء ترقية المساعد في قناة السجل..")
                 LOGS.exception(er)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = await download_file(
@@ -326,7 +326,7 @@ async def customize():
         chat_id = udB.get_key("LOG_CHANNEL")
         if asst.me.photo:
             return
-        LOGS.info("Menyesuaikan Bot Asisten di @BOTFATHER")
+        LOGS.info("تخصيص الروبوت المساعد في @BOTFATHER")
         UL = f"@{asst.me.username}"
         if not kazu_bot.me.username:
             sir = kazu_bot.me.first_name
@@ -342,7 +342,7 @@ async def customize():
             file = await download_file(file, "profile.jpg")
             rem = True
         msg = await asst.send_message(
-            chat_id, "**Penyesuaian Otomatis** Dimulai @Botfather"
+            chat_id, "**الضبط التلقائي** بدأ @Botfathe"
         )
         await asyncio.sleep(1)
         await kazu_bot.send_message("botfather", "/cancel")
@@ -351,7 +351,7 @@ async def customize():
         await asyncio.sleep(1)
         isdone = (await kazu_bot.get_messages("botfather", limit=1))[0].text
         if isdone.startswith("Invalid bot"):
-            LOGS.info("Error while trying to customise assistant, skipping...")
+            LOGS.info("حدث خطأ أثناء محاولة تخصيص المساعد، والتخطي...")
             return
         await kazu_bot.send_message("botfather", UL)
         await asyncio.sleep(1)
@@ -362,7 +362,7 @@ async def customize():
         await kazu_bot.send_message("botfather", UL)
         await asyncio.sleep(1)
         await kazu_bot.send_message(
-            "botfather", f"✨ مرحبا ✨!! I'm Assistant Bot of {sir}"
+            "botfather", f"✨ مرحبا ✨!! انا بوت المساعد الخاص بــ of {sir}"
         )
         await asyncio.sleep(2)
         await kazu_bot.send_message("botfather", "/setdescription")
@@ -371,13 +371,13 @@ async def customize():
         await asyncio.sleep(1)
         await kazu_bot.send_message(
             "botfather",
-            f"✨ Powerful Kazu Assistant Bot ✨\n✨ Master ~ {sir} ✨\n\n✨ Powered By ~ @KazuSupportGrp ✨",
+            f"✨ ربوت الأمبرو بلاك يوزر بوت ✨\n✨ Master ~ {sir} ✨\n\n✨ الأقوى على الأطلاق  ~ @Mlze1bot ✨",
         )
         await asyncio.sleep(2)
-        await msg.edit("Completed **Auto Customisation** at @BotFather.")
+        await msg.edit("تم الانتهاء من **التخصيص التلقائي** في @BotFather.")
         if rem:
             os.remove(file)
-        LOGS.info("Customisation Done")
+        LOGS.info("تم التخصيص")
     except Exception as e:
         LOGS.exception(e)
 
@@ -387,7 +387,7 @@ async def plug(plugin_channels):
     from .utils import load_addons
 
     if kazu_bot._bot:
-        LOGS.info("Plugin Channels can't be used in 'BOTMODE'")
+        LOGS.info("لا يمكن استخدام قنوات البرنامج المساعد في BOTMODE")
         return
     if os.path.exists("addons") and not os.path.exists("addons/.git"):
         shutil.rmtree("addons")
@@ -429,21 +429,21 @@ async def ready():
     chat_id = udB.get_key("LOG_CHANNEL")
     spam_sent = None
     if not udB.get_key("INIT_DEPLOY"):  # Detailed Message at Initial Deploy
-        MSG = """ **Thanks for Deploying Kazu Ubot!**
-• Here, are the Some Basic stuff from, where you can Know, about its Usage."""
-        PHOTO = "https://graph.org//file/d854abd533a783c6642b1.jpg"
+        MSG = """ **شكرا لك لنشر سورس الأمبرو بلاك !**
+• فيما يلي بعض الأشياء الأساسية التي يمكنك من خلالها التعرف على كيفية استخدام السورس ."""
+        PHOTO = "https://graph.org/file/b23bdfbaa9a7c650f9383.jpg"
         BTTS = Button.inline("• Click to Start •", "initft_2")
         udB.set_key("INIT_DEPLOY", "Done")
     else:
-        MSG = f"**Kazu Ubot has been deployed!**\n➖➖➖➖➖➖➖➖➖➖\n**UserMode**: {inline_mention(kazu_bot.me)}\n**Assistant**: @{asst.me.username}\n➖➖➖➖➖➖➖➖➖➖\n**Support**: @kazusupportgrp\n➖➖➖➖➖➖➖➖➖➖"
+        MSG = f"**تم تنصيب سورس الأمبرو بلاك!**\n➖➖➖➖➖➖➖➖➖➖\n**UserMode**: {inline_mention(kazu_bot.me)}\n**Assistant**: @{asst.me.username}\n➖➖➖➖➖➖➖➖➖➖\n**Support**: @Mlze1bot\n➖➖➖➖➖➖➖➖➖➖"
         BTTS, PHOTO = None, None
         if prev_spam := udB.get_key("LAST_UPDATE_LOG_SPAM"):
             try:
                 await kazu_bot.delete_messages(chat_id, int(prev_spam))
             except Exception as E:
-                LOGS.info(f"Kesalahan saat Menghapus Pesan Pembaruan Sebelumnya :{str(E)}")
+                LOGS.info(f"حدث خطأ أثناء حذف رسالة التحديث السابقة :{str(E)}")
         if await updater():
-            BTTS = Button.inline("Pembaruan tersedia", "updtavail")
+            BTTS = Button.inline("التحديث متاح", "updtavail")
 
     try:
         spam_sent = await asst.send_message(chat_id, MSG, file=PHOTO, buttons=BTTS)
@@ -477,7 +477,7 @@ async def ready():
                 else:
                     LOGS.info(cont)
                     LOGS.info(
-                        "Invalid Type of Announcement Detected!\nMake sure you are on latest version.."
+                        "تم اكتشاف نوع إعلان غير صالح!\nتأكد من أنك تستخدم الإصدار الأحدث.."
                     )
                 get_.append(key)
         udB.set_key("OLDANN", get_)
@@ -495,7 +495,7 @@ async def WasItRestart(udb):
         data = key.split("_")
         who = asst if data[0] == "bot" else kazu_bot
         await who.edit_message(
-            int(data[1]), int(data[2]), "__Restarted Successfully.__"
+            int(data[1]), int(data[2]), "__تمت اعادة التشغيل بنجاح.__"
         )
     except Exception as er:
         LOGS.exception(er)
