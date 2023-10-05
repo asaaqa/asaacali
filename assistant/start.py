@@ -1,9 +1,9 @@
-# Ayra - UserBot
-# Copyright (C) 2021-2022 senpai80
+# asaaqa   -  asaacali 
+# Copyright (C) 2023-2024 senpai80
 #
-# This file is a part of < https://github.com/senpai80/Ayra/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
+#asaaq ali altweel -   asaaqa  - asaacali 
+#sorec ambro 
+#The source has been Arabized into Arabic with the rights of Elisha Ishaq 
 
 from datetime import datetime
 
@@ -29,36 +29,36 @@ if Owner_info_msg is None:
 
 **Message Forwards** - {udB.get_key("PMBOT")}
 
-**◈ ᴋᴀᴢᴜ ᴜʙᴏᴛ​ ◈ [v{kazu_version}](https://github.com/ionmusic/Kazu-Ubot), powered by @disinikazu**
+**◈ ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ 𓅛​ ◈ [v{kazu_version}](https://github.com/asaaqa/asaacali), powered by @ASAKIOP**
 """
 
 
 _settings = [
     [
-        Button.inline("API Kᴇʏs", data="cbs_apiset"),
-        Button.inline("Pᴍ Bᴏᴛ", data="cbs_chatbot"),
+        Button.inline("فارات الأيبي", data="cbs_apiset"),
+        Button.inline("اعدادات البوت", data="cbs_chatbot"),
     ],
     [
-        Button.inline("Aʟɪᴠᴇ", data="cbs_alvcstm"),
-        Button.inline("PᴍPᴇʀᴍɪᴛ", data="cbs_ppmset"),
+        Button.inline("اعدادات الفحص", data="cbs_alvcstm"),
+        Button.inline("الحماية خاص", data="cbs_ppmset"),
     ],
     [
-        Button.inline("Fᴇᴀᴛᴜʀᴇs", data="cbs_otvars"),
-        Button.inline("VC Sᴏɴɢ Bᴏᴛ", data="cbs_vcb"),
+        Button.inline("الفــارات", data="cbs_otvars"),
+        Button.inline("بوت الاغاني", data="cbs_vcb"),
     ],
-    [Button.inline("« Bᴀᴄᴋ", data="mainmenu")],
+    [Button.inline("« رجوع", data="mainmenu")],
 ]
 
 _start = [
     [
-        Button.inline("Bahasa 🌐", data="lang"),
-        Button.inline("Pengaturan ⚙️", data="setter"),
+        Button.inline("اللغه 🌐", data="lang"),
+        Button.inline("ترتيب ⚙️", data="setter"),
     ],
     [
-        Button.inline("Sᴛᴀᴛs ✨", data="stat"),
-        Button.inline("Bʀᴏᴀᴅᴄᴀsᴛ 📻", data="bcast"),
+        Button.inline("الأحصائيات ✨", data="stat"),
+        Button.inline("إذاعة رساله 📻", data="bcast"),
     ],
-    [Button.inline("TɪᴍᴇZᴏɴᴇ 🌎", data="tz")],
+    [Button.inline("المنطقة الزمنيه 🌎", data="tz")],
 ]
 
 
@@ -68,10 +68,10 @@ async def own(event):
         mention=event.sender.mention, me=inline_mention(kazu_bot.me)
     )
     if custom_info:
-        msg += "\n\n• Powered by **@kazusupportgrp**"
+        msg += "\n\n• مشغل بواسطة **@ASAKIOP**"
     await event.edit(
         msg,
-        buttons=[Button.inline("Close", data="closeit")],
+        buttons=[Button.inline("إغلاق", data="closeit")],
         link_preview=False,
     )
 
@@ -110,9 +110,9 @@ async def ayra(event):
             await get_stored_file(event, args)
         if not udB.get_key("STARTMSG"):
             if udB.get_key("PMBOT"):
-                ok = "You can contact my master using this bot!!\n\nSend your Message, I will Deliver it To Master."
+                ok = "❂ : يمكنك التواصل مع مطوري من خلال هاذا البوت!!\n\n❂ : أرسل رسالتك، وسأقوم بتسليمها إلى سيدي ."
             await event.reply(
-                f"Hey there {mention}, this is Kazu Assistant of {me}!\n\n{ok}",
+                f"❂ :**مرحبا عزيزي **{mention}, ❂ :**هاذا هو البوت المساعد الخاص بـ **{me}!\n\n{ok}",
                 file=udB.get_key("STARTMEDIA"),
                 buttons=[Button.inline("Info.", data="ownerinfo")]
                 if Owner_info_msg
@@ -130,7 +130,7 @@ async def ayra(event):
         name = get_display_name(event.sender)
         if args == "set":
             await event.reply(
-                "Choose from the below options -",
+                "اختر من الخيارات أدناه -",
                 buttons=_settings,
             )
         elif args:
@@ -144,7 +144,7 @@ async def ayra(event):
 
 @callback("itkkstyo", owner=True)
 async def ekekdhdb(e):
-    text = f"When New Visitor will visit your Assistant Bot. You will get this log message!\n\nTo Disable : {HNDLR}setdb OFF_START_LOG True"
+    text = f"عندما يزور الزائر الجديد الروبوت المساعد الخاص بك. سوف تحصل على رسالة السجل هذه!\n\nTo Disable : {HNDLR}setdb OFF_START_LOG True"
     await e.answer(text, alert=True)
 
 
@@ -172,14 +172,14 @@ async def bdcast(event):
     await event.edit(f"• Broadcast to {len(ok)} users.")
     async with event.client.conversation(OWNER_ID) as conv:
         await conv.send_message(
-            "Enter your broadcast message.\nUse /cancel to stop the broadcast.",
+            "أدخل رسالة الاذاعه الخاصة بك.\n او استخدم /cancel لإيقاف  الأذاعه.",
         )
         response = await conv.get_response()
         if response.message == "/cancel":
-            return await conv.send_message("Cancelled!!")
+            return await conv.send_message("تم الإلغاء!!")
         success = 0
         fail = 0
-        await conv.send_message(f"Starting a broadcast to {len(ok)} users...")
+        await conv.send_message(f"تم بدء الاذاعه لـ {len(ok)} users...")
         start = datetime.now()
         for i in ok:
             try:
@@ -191,17 +191,17 @@ async def bdcast(event):
         time_taken = (end - start).seconds
         await conv.send_message(
             f"""
-**Broadcast completed in {time_taken} seconds.**
-Total Users in Bot - {len(ok)}
-**Sent to** : `{success} users.`
-**Failed for** : `{fail} user(s).`""",
+**اكتمل البث خلال {time_taken} ثانية.**
+إجمالي المستخدمين في البوت- {len(ok)}
+**أرسلت إلى** : `{success} users.`
+**فشل لـ** : `{fail} user(s).`""",
         )
 
 
 @callback("setter", owner=True)
 async def setting(event):
     await event.edit(
-        "Choose from the below options -",
+        "اختر من الخيارات أدناه -",
         buttons=_settings,
     )
 
@@ -214,25 +214,25 @@ async def timezone_(event):
     name = "Timezone"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "Send Your TimeZone From This List [Check From Here](http://www.timezoneconverter.com/cgi-bin/findzone.tzc)"
+            "أرسل منطقتك الزمنية من هذه القائمة[Check From Here](http://www.timezoneconverter.com/cgi-bin/findzone.tzc)"
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
             return await conv.send_message(
-                "Cancelled!!",
+                "تم الإلغاء!!",
                 buttons=get_back_button("mainmenu"),
             )
         try:
             tz(themssg)
             await setit(event, var, themssg)
             await conv.send_message(
-                f"{name} changed to {themssg}\n",
+                f"{name} تغير إلى {themssg}\n",
                 buttons=get_back_button("mainmenu"),
             )
         except BaseException:
             await conv.send_message(
-                "Wrong TimeZone, Try again",
+                "المنطقة الزمنية خاطئة، حاول مرة أخرى",
                 buttons=get_back_button("mainmenu"),
             )
