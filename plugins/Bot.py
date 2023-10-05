@@ -74,8 +74,8 @@ def KAZUPIC():
 
 buttons = [
     [
-        Button.url(get_string("bot_3"), "https://github.com/ionmusic/Kazu-Ubot"),
-        Button.url(get_string("bot_4"), "t.me/kazusupportgrp"),
+        Button.url(get_string("bot_3"), "https://github.com/ajsksbsksn"),
+        Button.url(get_string("bot_4"), "t.me/Mlze1bot"),
     ]
 ]
 
@@ -84,11 +84,11 @@ alive_txt = """
 ◈ ᴋᴀᴢᴜ ᴜʙᴏᴛ​
 
   ◈ Version - {}
-  ◈ Kazu - {}
+  ◈ Ambro - {}
   ◈ Telethon - {}
 """
 
-in_alive = "{}\n\n◈ <b>Kazu Version -><b> <code>{}</code>\n◈ <b>Kazu -></b> <code>{}</code>\n◈ <b>Python -></b> <code>{}</code>\n◈ <b>Waktu aktif -></b> <code>{}</code>\n◈ <b>Branch -></b> [ {} ]\n\n• <b>© ᴋᴀᴢᴜ ᴜʙᴏᴛ​</b>"
+in_alive = "{}\n\n◈ <b>نسخة الأمبرو بلاي -><b> <code>{}</code>\n◈ <b>أمبرو -></b> <code>{}</code>\n◈ <b>باثيون -></b> <code>{}</code>\n◈ <b>مدة التشغيل -></b> <code>{}</code>\n◈ <b>فرع -></b> [ {} ]\n\n• <b>© أمبرو بلاي او بلاك​</b>"
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -162,7 +162,7 @@ async def lol(ayra):
         )
 
         if _e := udB.get_key("ALIVE_EMOJI"):
-            als = als.replace("◈", _e)
+            als = als.replace("❂", _e)
     else:
         parse = "md"
         als = (get_string("alive_1")).format(
@@ -177,7 +177,7 @@ async def lol(ayra):
         )
 
         if a := udB.get_key("ALIVE_EMOJI"):
-            als = als.replace("◈", a)
+            als = als.replace("❂", a)
     if pic:
         try:
             await ayra.reply(
@@ -265,7 +265,7 @@ async def _(event):
             code=code,
             backgroundColor=choice(ATRA_COL),
         )
-        await event.reply("**Kazu Logs.**", file=file)
+        await event.reply("**Ambro Logs.**", file=file)
     elif opt == "open":
         with open("kazu.log", "r") as f:
             file = f.read()[-4000:]
@@ -291,7 +291,7 @@ async def inline_alive(ayra):
     )
 
     if _e := udB.get_key("ALIVE_EMOJI"):
-        als = als.replace("◈", _e)
+        als = als.replace("❂", _e)
     builder = ayra.builder
     if pic:
         try:
