@@ -78,4 +78,4 @@ class Loader:
             self._logger.info(f"Error while Loading {plugin}")
             return self._logger.exception(er)
         if log and self._logger:
-            self._logger.info(f"Successfully Loaded {plugin}!")
+            self._logger.info(f"تم تحميل بنجاح {plugin}!")
