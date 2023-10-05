@@ -311,7 +311,7 @@ async def inline_alive(ayra):
                     await builder.document(
                         pic,
                         title="Inline Alive",
-                        description="◈ ᴋᴀᴢᴜ ᴜʙᴏᴛ",
+                        description="ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ 𓅛",
                         parse_mode="html",
                         buttons=buttons,
                     )
@@ -327,7 +327,7 @@ async def inline_alive(ayra):
     await ayra.answer(result)
 
 
-@kazu_cmd(pattern="update( (.*)|$)")
+@kazu_cmd(pattern="تحديث( (.*)|$)")
 async def _(e):
     xx = await e.eor(get_string("upd_1"))
     if e.pattern_match.group(1).strip() and (
@@ -345,7 +345,7 @@ async def _(e):
         x = await asst.send_file(
             udB.get_key("LOG_CHANNEL"),
             KAZUPIC(),
-            caption="• **Pembaruan tersedia** •",
+            caption="• **التحديث متاح** •",
             force_document=False,
             buttons=Button.inline("Changelog", data="changes"),
         )
@@ -357,7 +357,7 @@ async def _(e):
         )
     else:
         await xx.edit(
-            f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/ionmusic/Kazu-Ubot/tree/{branch}">[{branch}]</a></strong>',
+            f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/asaaqa/asaacali/tree/{branch}">[{branch}]</a></strong>',
             parse_mode="html",
             link_preview=False,
         )
@@ -369,7 +369,7 @@ async def updava(event):
     await asst.send_file(
         udB.get_key("LOG_CHANNEL"),
         KAZUPIC(),
-        caption="• **Pembaruan tersedia** •",
+        caption="• **التحديث متاح** •",
         force_document=False,
         buttons=Button.inline("Changelog", data="changes"),
     )
