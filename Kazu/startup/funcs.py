@@ -462,6 +462,7 @@ async def ready():
     if spam_sent and not spam_sent.media:
         udB.set_key("LAST_UPDATE_LOG_SPAM", spam_sent.id)
     get_ = udB.get_key("OLDANN") or []
+"""
     try:
         updts = await async_searcher(
             "https://ultroid-api.vercel.app/announcements", post=True, re_json=True
@@ -483,7 +484,7 @@ async def ready():
         udB.set_key("OLDANN", get_)
     except Exception as er:
         LOGS.exception(er)
-
+"""
 
 async def WasItRestart(udb):
     key = udb.get_key("_RESTART")
