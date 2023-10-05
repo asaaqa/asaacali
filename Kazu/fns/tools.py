@@ -510,7 +510,7 @@ def telegraph_client():
     profile_url = (
         f"https://t.me/{kazu_bot.me.username}"
         if kazu_bot.me.username
-        else "https://t.me/kazusupportgrp"
+        else "https://t.me/hasheyy"
     )
     try:
         TelegraphClient.create_account(
@@ -570,7 +570,7 @@ async def get_file_link(msg):
 
     msg_id = await msg.forward_to(udB.get_key("LOG_CHANNEL"))
     await msg_id.reply(
-        "**Message has been stored to generate a shareable link. Do not delete it.**"
+        "**تم تخزين الرسالة لإنشاء رابط قابل للمشاركة. لا تحذفه.**"
     )
     msg_id = msg_id.id
     msg_hash = secrets.token_hex(nbytes=8)
@@ -649,7 +649,7 @@ class LottieException(Exception):
 
 
 class TgConverter:
-    """Convert files related to Telegram"""
+    """تحويل الملفات المتعلقة بتيليجرام"""
 
     @staticmethod
     async def animated_sticker(file, out_path="sticker.tgs", throw=False, remove=False):
