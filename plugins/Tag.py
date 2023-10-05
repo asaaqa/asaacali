@@ -1,32 +1,28 @@
-# Ayra - UserBot
-# Copyright (C) 2021-2022 senpai80
-#
-# This file is a part of < https://github.com/senpai80/Ayra/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
+#ㅌㄹ호우아ㅜ우우웅 asaaqalialtweel
+#سورس الامبراطوراليسع #سورس الأمبرو بلاي.
 """
-◈ Perintah Tersedia
+◈ **قائمة النداء والمنشن **
 
-• `{i}tagall`
-    Tandai 100 Anggota Obrolan Teratas.
+• `{i}ن مميز`
+    ❂ : لعمل نداء للاعضاء الأكثر تفاعلا بالجروب .
 
-• `{i}tagadmins`
-    Tandai Admin obrolan itu.
+• `{i}ن المشرفين`
+    ❂ : لعمل نداء لمشرفين بالجروب.
 
-• `{i}tagowner`
-    Tandai Pemilik obrolan itu
+• `{i}ناديني`
+    نداء باسم المطور
 
-• `{i}tagbots`
-    Tandai Bot dari obrolan itu.
+• `{i}ن بوت`
+    نداء باسماء البوتات المضافه بالجروب.
 
-• `{i}tagrec`
-    Tandai Anggota Aktif baru-baru ini.
+• `{i}ننشط`
+    وضع علامة على الأعضاء النشطين مؤخرًا.i.
 
-• `{i}tagon`
-    Tandai Anggota online (berfungsi hanya jika privasi tidak aktif).
+• `{i}نon`
+    وضع علامه على الاعضاء الفاتحين
 
-• `{i}tagoff`
-    Tandai Anggota Offline (berfungsi hanya jika privasi tidak aktif).
+• `{i}نoff`
+    وضع علامه على الاعضاء الغير نشيطين
 """
 
 from telethon.tl.types import ChannelParticipantAdmin as admin
@@ -39,7 +35,7 @@ from . import inline_mention, kazu_cmd
 
 
 @kazu_cmd(
-    pattern="tag(on|off|all|bots|rec|admins|owner)( (.*)|$)",
+    pattern="ن(on|off| مميز| بوت|نشط| المشرفين|اديني)( (.*)|$)",
     groups_only=True,
 )
 async def _(e):
@@ -63,14 +59,14 @@ async def _(e):
                 xx += f"\n{inline_mention(bb)}"
         elif isinstance(x, rec):
             rece += 1
-            if "rec" in okk and not bb.bot and not bb.deleted:
+            if "نشط" in okk and not bb.bot and not bb.deleted:
                 xx += f"\n{inline_mention(bb)}"
         if isinstance(y, owner):
             xx += f"\n◈{inline_mention(bb)}"
         if isinstance(y, admin) and "admin" in okk and not bb.deleted:
             xx += f"\n{inline_mention(bb)}"
-        if "all" in okk and not bb.bot and not bb.deleted:
+        if " مميز" in okk and not bb.bot and not bb.deleted:
             xx += f"\n{inline_mention(bb)}"
-        if "bot" in okk and bb.bot:
+        if " بوت" in okk and bb.bot:
             xx += f"\n{inline_mention(bb)}"
     await e.eor(xx)
