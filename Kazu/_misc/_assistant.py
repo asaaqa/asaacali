@@ -21,20 +21,20 @@ from . import append_or_update, owner_and_sudos
 OWNER = kazu_bot.full_name
 
 MSG = f"""
-**ᴋᴀᴢᴜ ᴜʙᴏᴛ​**
+**ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ 𓅛​**
 ➖➖➖➖➖➖➖➖➖➖
-**Owner**: [{OWNER}](tg://user?id={kazu_bot.uid})
-**Support**: @kazusupportgrp
+**المطور**: [{OWNER}](tg://user?id={kazu_bot.uid})
+**قناة السورس**: @Mlze1bot
 ➖➖➖➖➖➖➖➖➖➖
 """
 
 IN_BTTS = [
     [
         Button.url(
-            "Repository",
-            url="https://github.com/ionmusic/Kazu-Ubot",
+            "للتنصيب",
+            url="https://github.com/asaaqa/asaacali",
         ),
-        Button.url("Support", url="https://t.me/kazusupportgrp"),
+        Button.url("قناة السورس", url="https://t.me/Mlze1bot"),
     ]
 ]
 
@@ -91,12 +91,12 @@ def in_pattern(pattern=None, owner=False, **kwargs):
             if owner and event.sender_id not in owner_and_sudos():
                 res = [
                     await event.builder.article(
-                        title="ᴋᴀᴢᴜ ᴜʙᴏᴛ​",
-                        url="https://t.me/kazusupportgrp​",
-                        description="© ᴋᴀᴢᴜ ᴜʙᴏᴛ",
+                        title="ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ​",
+                        url="https://t.me/Mlze1bot​",
+                        description="© ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ 𓅛​",
                         text=MSG,
                         thumb=InputWebDocument(
-                            "https://graph.org/file/b23bdfbaa9a7c650f9383.jpg",
+                            "https://graph.org/file/8c4dc09a288106f735b20.jpg",
                             0,
                             "image/jpeg",
                             [],
@@ -124,10 +124,10 @@ def in_pattern(pattern=None, owner=False, **kwargs):
                     await event.answer(
                         [
                             await event.builder.article(
-                                title="Unhandled Exception has Occured!",
+                                title="حدث استثناء غير معالج!",
                                 text=error_text(),
                                 buttons=Button.url(
-                                    "Report", "https://t.me/kazusupportgrp"
+                                    "Report", "https://t.me/Mlze1bot"
                                 ),
                             )
                         ]
