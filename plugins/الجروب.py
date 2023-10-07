@@ -1,4 +1,4 @@
-Ayra - UserBot
+
 # Copyright (C) 2021-2022 senpai80
 #  تعريب الامبراطور اليسع 
 # This file is a part of < https://github.com/senpai80/Ayra/ >
