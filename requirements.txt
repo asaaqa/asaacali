@@ -1,3 +1,4 @@
+
 aiohttp
 openai
 https://github.com/New-dev0/Telethon/archive/diamond.zip
@@ -5,7 +6,7 @@ python-decouple
 pymongo
 httpx
 python-dotenv
-pytgcalls==3.0.0.dev22
+pytgcalls==3.0.0.dev24
 covid
 fonttools
 gtts
@@ -24,6 +25,7 @@ speedtest-cli
 textblob
 wikipedia
 spotdl
+py-Ayra==2.0.1
 akinator
 apscheduler
 beautifulsoup4
@@ -38,7 +40,7 @@ lottie
 numpy>=1.21.2
 oauth2client
 opencv-python-headless==4.5.5.62
-pillow==8.3.2
+pillow>=7.0.0
 profanitydetector
 psutil
 pypdf2>=1.26.0
@@ -71,3 +73,4 @@ pyscopg2
 redis
 hiredis
 asyncio
+pyUltroid
