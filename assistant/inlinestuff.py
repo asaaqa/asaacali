@@ -32,14 +32,14 @@ from . import _kazu_cache
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/ionmusic/Kazu-Ubot"),
-        Button.url("• Support •", url="t.me/kazusupportgrp"),
+        Button.url("• Repo •", url="https://github.com/asaaqa/asaacali"),
+        Button.url("• Support •", url="t.me/Mlze1bot"),
     ],
 ]
 
-ofox = "https://graph.org/file/231f0049fcd722824f13b.jpg"
-gugirl = "https://graph.org/file/0df54ae4541abca96aa11.jpg"
-kazupic = "https://graph.org//file/d854abd533a783c6642b1.jpg"
+ofox = "https://graph.org/file/8c4dc09a288106f735b20.jpg"
+gugirl = "https://graph.org/file/8c4dc09a288106f735b20.jpg"
+kazupic = "https://graph.org/file/8c4dc09a288106f735b20.jpg"
 
 apis = [
     "QUl6YVN5QXlEQnNZM1dSdEI1WVBDNmFCX3c4SkF5NlpkWE5jNkZV",
@@ -169,10 +169,10 @@ async def _(e):
 async def repo(e):
     res = [
         await e.builder.article(
-            title="Kazu Ubot",
+            title="ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ",
             description="Ubot | Telethon",
             thumb=wb(kazupic, 0, "image/jpeg", []),
-            text="**◈ ᴋᴀᴢᴜ ᴜʙᴏᴛ​ ◈**",
+            text="**◈ ѕᴏʀᴄᴇ ᴀᴍʙʀᴏ​ ◈**",
             buttons=SUP_BUTTONS,
         ),
     ]
