@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://graph.org//file/d854abd533a783c6642b1.jpg" alt="Kazu Logo">
+  <img src="https://graph.org/file/8c4dc09a288106f735b20.jpg" alt="Kazu Logo">
 </p>
 <h1 align="center">
-  <b>ᴋᴀᴢᴜ ꭙ ᴜʙᴏᴛ​</b>
+  <b>ѕᴏʀᴄᴇ​ ꭙ ᴀᴍʙʀᴏ 𓅛​​</b>
 </h1>
 
 <b>A stable pluggable Telegram userbot + Voice & Video Call music bot, based on Telethon and Pyrogram.</b>
@@ -43,7 +43,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 • `pip install pyUltroid`
 
- • `git clone https://github.com/ionmusic/Kazu-Ubot`
+ • `git clone https://github.com/asaaqa/asaacali`
 
  • `cd Kazu-Ubot`
 
@@ -65,7 +65,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 </details>
 
-<p><a href="https://heroku.com/deploy?template=https://github.com/ionmusic/Kazu-Ubot"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-aqua?style=plastic&logo=heroku&logoColor=gold"width="300" /></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/asaaqa/asaacali"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-aqua?style=plastic&logo=heroku&logoColor=gold"width="300" /></a></p>
 
 </details>
 
