@@ -126,7 +126,7 @@ async def alive(event):
 
 
 @kazu_cmd(
-    pattern="alive( (.*)|$)",
+    pattern="فحص( (.*)|$)",
 )
 async def lol(ayra):
     match = ayra.pattern_match.group(1).strip()
